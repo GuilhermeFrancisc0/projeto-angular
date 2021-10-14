@@ -10,8 +10,7 @@ export class ProductCrudComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   navigateToProductCreate(): void {
     this.router.navigate(['/products/create']); // tipo um history.push do react

@@ -7,26 +7,26 @@ import { Product } from '../product.model';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: Product[] = [
-  {id: 1, name: 'Hydrogen', price:99},
-  {id: 2, name: 'Helium', price:99},
-  {id: 3, name: 'Lithium', price:99},
-  {id: 4, name: 'Beryllium', price:99},
-  {id: 5, name: 'Boron', price:99},
-  {id: 6, name: 'Carbon', price:99},
-  {id: 7, name: 'Nitrogen', price:99},
-  {id: 8, name: 'Oxygen', price:99},
-  {id: 9, name: 'Fluorine', price:99},
-  {id: 10, name: 'Neon', price:99},
-  {id: 11, name: 'Sodium', price:99},
-  {id: 12, name: 'Magnesium', price:99},
-  {id: 13, name: 'Aluminum', price:99},
-  {id: 14, name: 'Silicon', price:99},
-  {id: 15, name: 'Phosphorus', price:99},
-  {id: 16, name: 'Sulfur', price:99},
-  {id: 17, name: 'Chlorine', price:99},
-  {id: 18, name: 'Argon', price:99},
-  {id: 19, name: 'Potassium', price:99},
-  {id: 20, name: 'Calcium', price:99},
+  { id: 1, name: 'Hydrogen', price: 99 },
+  { id: 2, name: 'Helium', price: 99 },
+  { id: 3, name: 'Lithium', price: 99 },
+  { id: 4, name: 'Beryllium', price: 99 },
+  { id: 5, name: 'Boron', price: 99 },
+  { id: 6, name: 'Carbon', price: 99 },
+  { id: 7, name: 'Nitrogen', price: 99 },
+  { id: 8, name: 'Oxygen', price: 99 },
+  { id: 9, name: 'Fluorine', price: 99 },
+  { id: 10, name: 'Neon', price: 99 },
+  { id: 11, name: 'Sodium', price: 99 },
+  { id: 12, name: 'Magnesium', price: 99 },
+  { id: 13, name: 'Aluminum', price: 99 },
+  { id: 14, name: 'Silicon', price: 99 },
+  { id: 15, name: 'Phosphorus', price: 99 },
+  { id: 16, name: 'Sulfur', price: 99 },
+  { id: 17, name: 'Chlorine', price: 99 },
+  { id: 18, name: 'Argon', price: 99 },
+  { id: 19, name: 'Potassium', price: 99 },
+  { id: 20, name: 'Calcium', price: 99 },
 ];
 
 /**
@@ -54,7 +54,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
       // stream for the data-table to consume.
       return merge(observableOf(this.data), this.paginator.page, this.sort.sortChange)
         .pipe(map(() => {
-          return this.getPagedData(this.getSortedData([...this.data ]));
+          return this.getPagedData(this.getSortedData([...this.data]));
         }));
     } else {
       throw Error('Please set the paginator and sort on the data source before connecting.');
@@ -65,7 +65,7 @@ export class ProductRead2DataSource extends DataSource<Product> {
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
    */
-  disconnect(): void {}
+  disconnect(): void { }
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,

@@ -5,18 +5,17 @@ import { Directive, OnInit, Input, ViewContainerRef, TemplateRef } from '@angula
 })
 export class ForDirective implements OnInit {
 
-  @Input('myForEm') numbers: number[] 
+  @Input('myForEm') numbers: number[]
 
   constructor(
-    private container: ViewContainerRef, 
+    private container: ViewContainerRef,
     private template: TemplateRef<any>
-    ) { }
+  ) { }
 
   ngOnInit(): void {
-    // Diretiva de estrutural: capaz de adcionar elementos na DOM
-    for(let number of this.numbers){
-      this.container.createEmbeddedView(
-        this.template, {$implicit: number})
+    // Diretiva de estrutural: capaz de adicionar elementos na DOM
+    for (let number of this.numbers) {
+      this.container.createEmbeddedView(this.template, { $implicit: number });
     }
   }
 }

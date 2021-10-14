@@ -10,29 +10,29 @@ import { ProductService } from '../product.service';
 })
 export class ProductDeleteComponent implements OnInit {
 
-  product: Product
+  product: Product;
 
   constructor(
-    private productService: ProductService, 
+    private productService: ProductService,
     private router: Router,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id')
+    const id = this.route.snapshot.paramMap.get('id');
     this.productService.readById(id).subscribe((product) => {
       this.product = product
-    })
+    });
   }
 
   removeProduct(): void {
-    this.productService.delete(this.product.id).subscribe(()=>{
-      this.productService.showMessage("Produto removido!")
-      this.router.navigate(['/products'])
-    })
+    this.productService.delete(this.product.id).subscribe(() => {
+      this.productService.showMessage("Produto removido!");
+      this.router.navigate(['/products']);
+    });
   }
 
   cancel(): void {
-    this.router.navigate(['/products'])
+    this.router.navigate(['/products']);
   }
 }
